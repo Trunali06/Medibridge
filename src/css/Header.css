@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 50px;
+    width: 100%;
+    padding-inline: 10px;
+    padding-block: 5px;
+    background-color: rgba(138, 183, 222, 0.856);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+
+}
+.nav{
+    height: 20px;
+
+
+}
+.link{
+    
+    border: 1px solid black;
+    padding-inline: 30px;
+    padding-block: 5px;
+    background-color: rgb(19, 140, 192);
+    color: rgb(250, 246, 238);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-inline: 20px;
+
+}
+.link:hover{
+    background-color: rgb(48, 88, 123);
+
+}

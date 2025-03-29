@@ -1,0 +1,21 @@
+button{
+    height: 40px;
+    width: 150px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: rgb(183, 213, 227);
+    border-radius: 15px;
+    text-transform: capitalize;
+    margin-left: 150px;
+    cursor: pointer;
+    box-shadow: 1px 0px 2px 0px black;
+    
+
+}
+
+button:hover{
+    background-color: rgb(76, 132, 181);
+    color: aliceblue;
+
+}
