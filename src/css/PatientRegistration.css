@@ -68,3 +68,6 @@ header{
 input[type="checkbox"]:checked{
     accent-color: rgb(29, 153, 29);
 }
+.err{
+    margin-left: 60px;
+}

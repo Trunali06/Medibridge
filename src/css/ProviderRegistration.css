@@ -33,17 +33,20 @@ header{
     justify-content: space-around;
 }
 .last{
-    margin-left: -20px;
+    margin-left: -30px;
     margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
 }
+
 .file{
+    margin-left: 40px;
     margin-top: 3px;
     margin-right: 400px;
 }
 .filefolder {
     outline: none;
+    /* margin-left:35px ; */
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.692);
 }

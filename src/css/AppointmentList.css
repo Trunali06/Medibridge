@@ -1,0 +1,23 @@
+.card{
+    margin: 20px;
+    height: 200px;
+    border-radius:10px;
+    box-shadow: 0px 0px 5px 0px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.card:hover{
+    background-color: rgba(212, 230, 185, 0.441);
+
+}
+.card p{
+    font-weight: bold;
+}
+.butns{
+    margin-top: 14px;
+}
+.dt{
+    margin: 30px;
+}
