@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../../css/PatientRegistration.css"
 import Button from "../../shared/components/Button";
 
-// chetan
+
 const PatientRegistration=()=> {
 const initialValues=
 {
@@ -23,7 +23,7 @@ const initialValues=
 };
 const [formData, setFormData]=useState(initialValues);
 
-const[errors,setErrors]=useState();
+const[errors,setErrors]=useState({});
 
  const[isSubmit,setIsSubmit]=useState(false);
 
@@ -31,7 +31,7 @@ const[errors,setErrors]=useState();
  const handleChange=(e)=>
     {
     const{name,value}=e.target;
-    setFormData({ ...formData,[name]:value,});
+    setFormData({ ...formData,[name]:value});
     };
 
    const handleSubmit=(e)=>{
@@ -43,7 +43,7 @@ const[errors,setErrors]=useState();
 
 
    useEffect(()=>{
-    if(Object.keys(errors).length===0&& isSubmit){
+    if(Object.keys(errors).length === 0 && isSubmit){
         console.log("Form submitted successfully:",formData);
     }
    },[errors,isSubmit]);
@@ -57,22 +57,22 @@ const[errors,setErrors]=useState();
         newErrors.lastName="Lirst name is required";
     }
     if (!formData.email){
-        newErrors.email="Email name is required";
+        newErrors.email="Email is required";
     }
     if (!formData.date){
-        newErrors.date="Date name is required";
+        newErrors.date="Date is required";
     }
     if (!formData.phoneNumber){
-        newErrors.phoneNumber="Phone Number name is required";
+        newErrors.phoneNumber="Phone Number is required";
     }
     if (!formData.gender){
-        newErrors.gender="Gender name is required";
+        newErrors.gender="Gender is required";
     }
     if (!formData.bloodGroup){
-        newErrors.bloodGroup="Blood Group name is required";
+        newErrors.bloodGroup="Blood Group is required";
     }
     if (!formData.address){
-        newErrors.address="Address name is required";
+        newErrors.address="Address is required";
     }
     if (!formData.city){
         newErrors.city="City name is required";
@@ -84,13 +84,13 @@ const[errors,setErrors]=useState();
         newErrors.state="State name is required";
     }
     if (!formData.zipCode){
-        newErrors.zipCode="ZipCode name is required";
+        newErrors.zipCode="ZipCode is required";
     }
     if (!formData.profileImage){
-        newErrors.profileImage="profile  Image name is required";
+        newErrors.profileImage="profile-Image  is required";
     }
     if (!formData.checkBox){
-        newErrors.checkBox="checkBox name is required";
+        newErrors.checkBox="checkBox is required";
     }
     return newErrors;
      };
@@ -98,76 +98,102 @@ const[errors,setErrors]=useState();
     <>
      <main>
         <form onSubmit={handleSubmit}>
-
         <div className="info">
-
-        <div>
+            <div>
              <label >First Name</label><br/>
-             <input className="text" 
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-             /><br/>
-        </div>
-
-        <div>
-            <label >Last Name</label><br/>
-            <input className="text"
-             type="text"
-             name="lastName"
-             value={formData.lastName}
-             onChange={handleChange}
-             
-             />
-        </div>
-        <div>
-            <label >Email</label><br/>
-            <input className="text"
-             type="email"
-             name="email"
-             value={formData.email}
-             onChange={handleChange}
-
-             />
-        </div>
-
-        </div>
-
-        <div className="info2">
-            <div>
-            <label >Date Of Birth</label><br/>
-            <input className="text"
-             type="date"
-             name="date"
-             value={formData.date}
-             onChange={handleChange}
-
-             /><br/>
-            </div>
-    
-            <div>
-                <label >Phone Number</label><br/>
                 <input className="text" 
-                type="number"
-                name="number"
-                value={formData.number}
-              onChange={handleChange}
+                       type="text"
+                       name="firstName"
+                       value={formData.firstName}
+                       onChange={handleChange}/><br/>
+                       {
+                      errors.firstName && 
+                      <p className='error'>
+                      {errors.firstName}</p>
+                   }
 
-                />
+
             </div>
+                   
             <div>
-                <label >Gender</label><br/>
-                <div className="radio"
-                  name="gender"
-                  value={formData.gender}
-              onChange={handleChange}
+            <label >Last Name</label><br/>
+                <input className="text"
+                       type="text"
+                       name="lastName"
+                       value={formData.lastName}
+                       onChange={handleChange}/>
+                        {
+                    errors.lastName && 
+                    <p className='error'>
+                    {errors.lastName}</p>
+                   }
+            </div>
+                  
 
-                  >
-                <input type="radio"/><p>Male</p>
-                <input type="radio"/><p>Female</p>
-                <input type="radio"/><p>Other</p>
-                </div>
+            <div>
+                <label >Email</label><br/>
+                <input className="text"
+                       type="email"
+                       name="email"
+                       value={formData.email}
+                       onChange={handleChange}/>
+                        {
+                     errors.email && 
+                     <p className='error'>
+                     {errors.email}</p>
+                    }
+            </div>
+                   
+            </div>
+
+             <div className="info2">
+                 <div>
+                   <label >Date Of Birth</label><br/>
+                      <input className="text"
+                             type="date"
+                             name="date"
+                             value={formData.date}
+                             onChange={handleChange}/><br/>
+                              {
+                          errors.date && 
+                          <p className='error'>
+                          {errors.date}</p>
+                       }
+                 </div>
+                      
+    
+                   <div>
+                       <label >Phone Number</label><br/>
+                       <input className="text" 
+                              type="number"
+                              name="number"
+                              value={formData.phoneNumber}
+                              onChange={handleChange}/>
+                        {
+                            errors.phoneNumber && 
+                            <p className='error'>
+                            {errors.phoneNumber}</p>
+                          }
+                               
+                   </div>
+                  
+                        
+                   <div>
+                          <label >Gender</label><br/>
+                    <div className="radio"
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleChange}>
+
+                    <input type="radio"/><p>Male</p>
+                    <input type="radio"/><p>Female</p>
+                    <input type="radio"/><p>Other</p>
+                    </div>
+                    {
+                    errors.gender && 
+                    <p className='error'>
+                    {errors.gender}</p>
+                     }
             </div>
             </div>
             <div className="info3">
@@ -189,8 +215,13 @@ const[errors,setErrors]=useState();
                     <option value="O+">O-</option>
                   
                 </select>
+                {
+                errors.bloodGroup && 
+                <p className='error'>
+                {errors.bloodGroup}</p>
+                }
                 </div>
-        
+               
                 <div>
                     <label >Address</label><br/>
                     <input className="text"
@@ -200,7 +231,13 @@ const[errors,setErrors]=useState();
               onChange={handleChange}
 
                      />
+                     {
+                errors.address && 
+                <p className='error'>
+                {errors.address}</p>
+                }
                 </div>
+                
                 <div>
                     <label >City</label><br/>
                     <input className="text"
@@ -209,7 +246,13 @@ const[errors,setErrors]=useState();
                      value={formData.city} 
               onChange={handleChange}
               />
-                </div>
+               
+                {
+                errors.city && 
+                <p className='error'>
+                {errors.city}</p>
+                }
+                 </div>
                 </div>
                 <div className="info">
                     <div>
@@ -225,8 +268,13 @@ const[errors,setErrors]=useState();
                       <option value="UK">UK</option>
                       <option value="Canada">Canada</option>
                     </select>
+                    {
+                errors.country && 
+                <p className='error'>
+                {errors.country}</p>
+                }
                     </div>
-            
+                    
                     <div>
                     <label >State</label><br/>
                         <select className="drop"
@@ -240,18 +288,28 @@ const[errors,setErrors]=useState();
                           <option value="Karnataka">Karnataka</option>
                           <option value="Delhi">Delhi</option>
                         </select>
+                        {
+                errors.state && 
+                <p className='error'>
+                {errors.state}</p>
+                }
                     </div>
+                   
                     <div>
                         <label >ZipCode</label><br/>
                         <input className="text"
                          type="text" 
                          name="zipCode"
                          value={formData.zipCode}
-              onChange={handleChange}
-
-                         
-                         />
+                         onChange={handleChange}/>
+                          {
+                errors.zipCode && 
+                <p className='error'>
+                {errors.zipCode}</p>
+                }
                     </div>
+                   
+
                    
                 </div>
             <div className="file-profile">
@@ -260,23 +318,40 @@ const[errors,setErrors]=useState();
                  type="file"
                  name="profileImage"
                  value={formData.profileImage}
-              onChange={handleChange}
+              onChange={handleChange} />
+              {
+                errors.profileImage && 
+                <p className='error'>
+                {errors.profileImage}
+             </p>
 
-                 
-                 />
+             }
             </div>
+            
 
             <input className="check"
              type="checkbox"
              name="checkBox"
              value={formData.checkBox}
              onChange={handleChange}
-
              />
+
+             
              <span>Agree to terms and conditions</span><br/>
+             {
+                errors.checkBox && 
+                <p className='error err'>
+                {errors.checkBox}
+             </p>
+
+             }
+            
             <div className="btnpatient" >
                <div className='btn'><Button  btnName={"Register"}/></div>
-               <div ><Button  btnName={"Clear"}/></div> 
+               <div className='btn'>
+               <Button btnName={"Clear"} onClick={() => setFormData(initialValues)} />
+
+               </div>
             </div>
             </form>
        </main>
@@ -285,4 +360,4 @@ const[errors,setErrors]=useState();
   )
 }
 
-export default PatientRegistration
+export default PatientRegistration;

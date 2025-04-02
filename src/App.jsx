@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Header  from './shared/components/Header'
-import { Outlet } from 'react-router-dom'
+import LoginHeader  from './shared/components/LoginHeader'
+import { Outlet } from 'react-router-dom';
+import PatientHeader from './shared/components/PatientHeader';
+import Home from './pages/org/Home';
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Header/>
+     {/* <LoginHeader/> */}
+     <PatientHeader/>
+     {/* <Home/> */}
      <Outlet/>
      </>
   )

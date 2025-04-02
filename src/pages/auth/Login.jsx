@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../css/Login.css";
-import Button from "../../shared/components/Button";
+import Button from "../../shared/components/Button"
+
 
 const Login = () => {
   const initialValues =
@@ -13,7 +14,8 @@ const Login = () => {
   const [fromErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
+  {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
@@ -46,6 +48,8 @@ const Login = () => {
 
   return (
     <>
+
+
       <div className="first">
         <div className="loginp">
           <div className="patient"></div>
@@ -94,7 +98,10 @@ const Login = () => {
                 value={formValues.password}
                 onChange={handleChange}
               />
-              {fromErrors.password && <p className="error" >{fromErrors.password}</p>}
+              {
+              fromErrors.password && 
+              <p className="error">{fromErrors.password}</p>
+              }
             </div><br />
 
             <div className="logb">

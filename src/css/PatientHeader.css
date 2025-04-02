@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.patientheader{
+    height: 20ph;
+    padding: 10px;
+    background-color: rgb(208, 219, 215);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+}
+.patientlink{
+    font-size: 15px;
+    margin-right: 100px;
+    text-decoration: none;
+    color: black;
+
+}
+.patientlink:hover{
+    background-color: rgba(152, 218, 187, 0.685);
+}
+

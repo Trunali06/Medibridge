@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 .navbar{
     height: 50px;
     width: 100%;
     padding-inline: 10px;
     padding-block: 5px;
-    background-color: rgba(138, 183, 222, 0.856);
+    background-color: rgba(138, 183, 222, 0.991);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,8 +19,6 @@
 }
 .nav{
     height: 20px;
-
-
 }
 .link{
     
